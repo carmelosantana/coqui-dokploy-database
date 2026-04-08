@@ -1,0 +1,77 @@
+{
+    "name": "carmelosantana/coqui-toolkit-dokploy-database",
+    "description": "Dokploy database management toolkit for Coqui — manage Postgres, MySQL, MariaDB, MongoDB, and Redis databases, backup policies, and S3-compatible backup destinations via the Dokploy REST API.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "coqui",
+        "dokploy",
+        "database",
+        "postgres",
+        "mysql",
+        "mariadb",
+        "mongodb",
+        "redis",
+        "backup",
+        "toolkit",
+        "php-agents"
+    ],
+    "authors": [
+        {
+            "name": "Carmelo Santana"
+        }
+    ],
+    "require": {
+        "php": "^8.4",
+        "carmelosantana/coqui-toolkit-dokploy": "^1.0 || dev-main"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../coqui-dokploy"
+        }
+    ],
+    "require-dev": {
+        "carmelosantana/php-agents": "^0.7",
+        "pestphp/pest": "^3.0",
+        "phpstan/phpstan": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "CarmeloSantana\\CoquiToolkitDokployDatabase\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CarmeloSantana\\CoquiToolkitDokployDatabase\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "php-agents": {
+            "toolkits": [
+                "CarmeloSantana\\CoquiToolkitDokployDatabase\\DokployDatabaseToolkit"
+            ],
+            "credentials": {
+                "DOKPLOY_API_TOKEN": "Dokploy API token — generate at Settings → Profile → API/CLI section in your Dokploy dashboard",
+                "DOKPLOY_BASE_URL": "Dokploy instance base URL (e.g. https://dokploy.example.com)"
+            },
+            "gated": {
+                "dokploy_database": ["delete", "deploy", "stop", "rebuild"],
+                "dokploy_db_backup": ["delete", "run"],
+                "dokploy_destination": ["delete"]
+            }
+        }
+    },
+    "scripts": {
+        "test": "pest",
+        "analyse": "phpstan analyse"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
