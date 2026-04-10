@@ -4,15 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e2aa82cf6f9e367c93518a0035e3aa42",
+    "content-hash": "5d083aa9d8f188aa941713a1317606f4",
     "packages": [
         {
-            "name": "coquibot/coqui-toolkit-dokploy",
+            "name": "carmelosantana/coqui-toolkit-dokploy",
             "version": "dev-main",
             "dist": {
                 "type": "path",
-                "url": "../coqui-toolkit-dokploy",
-                "reference": "c0a7f69c858b25d85c4843600c09b6b3db39a0b6"
+                "url": "../coqui-dokploy",
+                "reference": "bd3fbaa439d7ea534287fa780815e1916adf3060"
             },
             "require": {
                 "php": "^8.4",
@@ -27,7 +27,7 @@
             "extra": {
                 "php-agents": {
                     "toolkits": [
-                        "CoquiBot\\Toolkits\\Dokploy\\DokployToolkit"
+                        "CarmeloSantana\\CoquiToolkitDokploy\\DokployToolkit"
                     ],
                     "credentials": {
                         "DOKPLOY_API_TOKEN": "Dokploy API token — generate at Settings → Profile → API/CLI section in your Dokploy dashboard",
@@ -68,12 +68,12 @@
             },
             "autoload": {
                 "psr-4": {
-                    "CoquiBot\\Toolkits\\Dokploy\\": "src/"
+                    "CarmeloSantana\\CoquiToolkitDokploy\\": "src/"
                 }
             },
             "autoload-dev": {
                 "psr-4": {
-                    "CoquiBot\\Toolkits\\Dokploy\\Tests\\": "tests/"
+                    "CarmeloSantana\\CoquiToolkitDokploy\\Tests\\": "tests/"
                 }
             },
             "scripts": {
@@ -81,7 +81,7 @@
                     "pest"
                 ],
                 "analyse": [
-                    "phpstan analyse"
+                    "phpstan analyse --memory-limit=1G"
                 ]
             },
             "license": [
@@ -4411,7 +4411,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "coquibot/coqui-toolkit-dokploy": 20
+        "carmelosantana/coqui-toolkit-dokploy": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
