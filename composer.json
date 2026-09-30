@@ -23,14 +23,8 @@
     ],
     "require": {
         "php": "^8.4",
-        "carmelosantana/coqui-toolkit-dokploy": "^1.0 || dev-main"
+        "carmelosantana/coqui-toolkit-dokploy": "^0.1"
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../coqui-dokploy"
-        }
-    ],
     "require-dev": {
         "carmelosantana/php-agents": "^0.7",
         "pestphp/pest": "^3.0",
@@ -56,9 +50,19 @@
                 "DOKPLOY_BASE_URL": "Dokploy instance base URL (e.g. https://dokploy.example.com)"
             },
             "gated": {
-                "dokploy_database": ["delete", "deploy", "stop", "rebuild"],
-                "dokploy_db_backup": ["delete", "run"],
-                "dokploy_destination": ["delete"]
+                "dokploy_database": [
+                    "delete",
+                    "deploy",
+                    "stop",
+                    "rebuild"
+                ],
+                "dokploy_db_backup": [
+                    "delete",
+                    "run"
+                ],
+                "dokploy_destination": [
+                    "delete"
+                ]
             }
         }
     },
